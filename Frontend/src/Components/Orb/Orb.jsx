@@ -19,6 +19,7 @@ const Orb = () => {
             transform: translate(0, 0);
         }
     `
+
     const OrbStyled = styled.div`
         width: 70vh;
         height: 70vh;
@@ -38,5 +39,6 @@ const Orb = () => {
     </OrbStyled>
   )
 }
+
 
 export default Orb

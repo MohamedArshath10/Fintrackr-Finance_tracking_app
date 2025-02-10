@@ -12,10 +12,13 @@ const App = () => {
       <Orb />
       <MainLayout>
 
+
+
       </MainLayout>
     </AppStyled>
   )
 }
+
 
 
 const AppStyled =styled.div`
