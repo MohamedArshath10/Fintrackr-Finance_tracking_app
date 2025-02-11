@@ -26,4 +26,6 @@ const AppStyled =styled.div`
   background-image: url(${props => props.bg});
   position: relative;
 `
+
+
 export default App
