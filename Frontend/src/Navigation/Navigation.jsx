@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import {avatar} from '..img/react.svg'
+import avatar from '../img/avatar.png'
 import { menuItems } from "../Utils/menuItems";
 import { signout } from '../Utils/Icons';
 
@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <NavStyled>
         <div className="user-con">
-          {/* <img src={avatar} alt="" /> */}
+          <img src={avatar} alt="" />
           <div className="text">
             <h2>Arshath</h2>
             <p>Your Money</p>
@@ -28,11 +28,30 @@ const Navigation = () => {
   )
 }
 
-const NavStyled = styled.div`
-
-
-
-
+const NavStyled = styled.nav`
+  padding: 2rem 1.5rem;
+  width: 374px;
+  height: 100%;
+  background: rgba(252, 246, 249, 0.78);
+  border: 3px solid #FFFFFF
+  backdrop-filter: blur(4.5px)
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  .user-con{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    img{
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
 `
 
 export default Navigation
