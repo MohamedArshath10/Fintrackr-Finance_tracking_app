@@ -30,14 +30,10 @@ const Orb = () => {
         filter: blur(400px);
         animation: ${moveOrb} 15s alternate linear infinite;
     `
-    
-
   return (
     <OrbStyled>
         
     </OrbStyled>
   )
 }
-
-
 export default Orb
