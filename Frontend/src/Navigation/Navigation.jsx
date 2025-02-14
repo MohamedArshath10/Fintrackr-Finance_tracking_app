@@ -32,7 +32,7 @@ const NavStyled = styled.nav`
   padding: 2rem 1.5rem;
   width: 374px;
   height: 100%;
-  background: rgba(252, 246, 249, 0.78);
+  background: rgba(242, 243, 253, 0.78);
   border: 3px solid #ffffff
   backdrop-filter: blur(4.5px)
   border-radius: 32px;
@@ -85,7 +85,7 @@ const NavStyled = styled.nav`
     }
   }
   .active{
-    color: rgba(34, 34, 96, 1);
+    color: rgba(34, 34, 96, 1) !important;
     i{
       color: rgba(34, 34, 96, 1);
     }

@@ -26,8 +26,8 @@ const Orb = () => {
         border-radius: 50%;
         margin-left: -37vh;
         margin-top: -37vh;
-        background: linear-gradient(180deg, #3674B5 0%,#2E5077 100%);
-        filter: blur(400px);
+        background: linear-gradient(180deg, #3674B5 0%,#8D0B41 100%);
+        filter: blur(350px);
         animation: ${moveOrb} 15s alternate linear infinite;
     `
   return (
