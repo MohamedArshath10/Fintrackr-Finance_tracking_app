@@ -33,10 +33,6 @@ const App = () => {
   const orbMemo = useMemo(() => {
     return <Orb />
   },[])
-
-  
-  
-  
   return (
     <AppStyled bg={bg} className='App'>
       {orbMemo}
@@ -49,9 +45,6 @@ const App = () => {
     </AppStyled>
   )
 }
-
-
-
 const AppStyled =styled.div`
   height: 100vh;
   background-image: url(${props => props.bg});
@@ -60,7 +53,7 @@ const AppStyled =styled.div`
     flex: 1;
     background: rgba(242, 243, 253, 0.78);
     border: 3px solid #ffffff;
-    // backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(2.5px);
     border-radius: 32px;
     overflow: auto;
     overflow-x: hidden;

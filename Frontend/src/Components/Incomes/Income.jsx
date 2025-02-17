@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { InnerLayout } from '../../Styles/Layout'
 import { useGlobalContext } from '../../Context/globalContext'
+import Form from '../Form/Form'
 
 const Income = () => {
 
@@ -14,7 +15,7 @@ const Income = () => {
             <div className="income-content">
                 <div className="form-container"></div>
                 <div className="incomes">
-                    
+                    <Form />
                 </div>
             </div>
         </InnerLayout>
