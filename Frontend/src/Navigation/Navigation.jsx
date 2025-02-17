@@ -50,7 +50,7 @@ const NavStyled = styled.nav`
       height: 80px;
       border-radius: 50%;
       object-fit: cover;
-      background: #fcf6f9
+      background: #fcf6f9;
       border: 2px solid #FFFFFF;
       padding: 0.2rem;
       box-shadow: 0px 1px 17px rgba(0,0,0,0.06);

@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <DashboardStyled>
         <InnerLayout>
-            
+            <h1>Dashboard</h1>
         </InnerLayout>
     </DashboardStyled>
   )
