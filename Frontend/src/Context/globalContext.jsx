@@ -19,10 +19,18 @@ export const GlobalProvider = ({children}) => {
         })
     }
 
+    const getIncome = async () => {
+        const response = await axios.get(`${BASE_URL}get-income`)
+        setIncomes(response.data)
+        console.log(response.data);
+    }
+
 
     return (
         <GlobalContext.Provider value={{
-            addIncome, 
+            addIncome,
+            getIncome, 
+            incomes
         }}>
             {children}
         </GlobalContext.Provider>
