@@ -17,12 +17,12 @@ export const GlobalProvider = ({children}) => {
         .catch((err) => {
             setError(err.response.data.message)
         })
+        getIncome()
     }
 
     const getIncome = async () => {
         const response = await axios.get(`${BASE_URL}get-income`)
         setIncomes(response.data)
-        console.log(response.data);
     }
 
 

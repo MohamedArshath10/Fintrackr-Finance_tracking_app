@@ -10,7 +10,7 @@ const Income = () => {
 
   useEffect(() => {
     getIncome()
-  }, [])
+  }, [incomes])
   
   return (
     <IncomeStyled>
@@ -33,6 +33,14 @@ const Income = () => {
 }
 
 const IncomeStyled = styled.div`
-
+  display: flex;
+  overflow: auto;
+  .income-content{
+    display: flex;
+    gap: 2rem;
+    .incomes{
+      flex: 1;
+    }
+  }
 `
 export default Income

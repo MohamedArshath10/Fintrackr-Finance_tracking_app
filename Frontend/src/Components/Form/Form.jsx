@@ -8,7 +8,7 @@ import { plus } from '../../Utils/Icons'
 import { GlobalStyle } from '../../Styles/GlobalStyle'
 
 const Form = () => {
-    const {addIncome} = useGlobalContext()
+    const {addIncome, getIncome} = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -26,6 +26,7 @@ const Form = () => {
     const handleSubmit = e => {
         e.preventDefault()
         addIncome(inputState)
+        getIncome()
     }
 
   return (
@@ -56,7 +57,7 @@ const Form = () => {
             </select>
         </div>
         <div className="input-control">
-            <textarea type="text" value={description} name={'description'} id='description' cols='30' rows='4' placeholder='Salary description' onChange={handleInput('description')}/>
+            <textarea type="text" value={description} name={'description'} id={'description'} cols='30' rows='4' placeholder='Salary description' onChange={handleInput('description')}/>
         </div>
         <div className="submit-btn">
             <Button 

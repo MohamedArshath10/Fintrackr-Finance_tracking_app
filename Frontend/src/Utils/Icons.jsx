@@ -13,7 +13,7 @@ export const piggy = <i className="fa-solid fa-piggy-bank"></i>
 export const freelance = <i className="fa-solid fa-earth-americas"></i>
 export const yt = <i className="fa-brands fa-youtube"></i>
 export const card = <i className="fa-brands fa-cc-visa"></i>
-export const users = <i className="fa-solid fa-user-between-lines"></i>
+export const users = <i className="fa-solid fa-users-between-lines"></i>
 export const dollar = <i className="fa-solid fa-dollar-sign"></i>
 export const calender = <i className="fa-solid fa-calender"></i>
 export const comment = <i className="fa-solid fa-comment"></i>
