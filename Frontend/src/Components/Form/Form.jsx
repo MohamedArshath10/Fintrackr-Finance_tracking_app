@@ -27,6 +27,13 @@ const Form = () => {
         e.preventDefault()
         addIncome(inputState)
         getIncome()
+        setInputState({
+            title: '',
+            amount: '',
+            date: '',
+            category: '',
+            description: '',
+        })
     }
 
   return (

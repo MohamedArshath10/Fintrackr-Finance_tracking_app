@@ -60,6 +60,8 @@ const IncomeItem = ({
             }
         }
     }
+
+    // console.log(id)
   return (
     <IncomeItemStyled indicator={indicatorColor}>
         <div className="icon">
@@ -82,7 +84,9 @@ const IncomeItem = ({
                         color={'#fff'}
                         iColor = {'#fff'}
                         hColor= {'#81BFDA'}
-                        // onClick={() => handleDelete(id)}
+                        onClick={() => {
+                            deleteItem(id)}
+                        }
                     />
                 </div>
             </div>
@@ -105,8 +109,8 @@ const IncomeItemStyled = styled.div `
     width: 100%;
     color: #222260;
     .icon{
-        width: 80px;
-        height: 80px;
+        width: 50px;
+        height: 50px;
         border-radius: 20px;
         background: #f5f5f5;
         display: flex;
@@ -114,7 +118,7 @@ const IncomeItemStyled = styled.div `
         justify-content: center;
         border: 2px solid #ffffff;
         i{
-            font-size: 2.6rem;
+            font-size: 1.6rem;
         }
     }
     .content{
@@ -149,6 +153,7 @@ const IncomeItemStyled = styled.div `
                 p{
                     display: flex;
                     align-items: center;
+                    font-size: 16px;
                     gap: .5rem;
                     color: #222260;
                     opacity: 0.8;
