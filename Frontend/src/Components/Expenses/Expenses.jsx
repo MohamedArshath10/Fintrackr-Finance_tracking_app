@@ -5,7 +5,7 @@ import { useGlobalContext } from '../../Context/globalContext'
 import Form from '../Form/Form'
 import IncomeItem from '../IncomeItem/IncomeItem'
 
-const Income = () => {
+const Expenses = () => {
   const {addIncome, incomes, getIncome, deleteIncome, totalIncome} = useGlobalContext()
 
   useEffect(() => {
@@ -15,8 +15,8 @@ const Income = () => {
   return (
     <IncomeStyled>
         <InnerLayout>
-            <h1>Income</h1>
-            <h2 className="total-income">Total Income <span>${totalIncome()}</span></h2>
+            <h1>Expenses</h1>
+            <h2 className="total-income">Total Expenses: <span>${totalIncome()}</span></h2>
             <div className="income-content">
                 <div className="form-container"></div>
                     <Form />
@@ -62,4 +62,4 @@ const IncomeStyled = styled.div`
     }
   }
 `
-export default Income
+export default Expenses
