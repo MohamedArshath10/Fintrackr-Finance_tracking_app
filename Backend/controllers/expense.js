@@ -1,4 +1,4 @@
-const ExpenseSchema = require('../modals/incomeModal')
+const ExpenseSchema = require('../modals/expenseModal')
 
 exports.addExpense = async(req, res) => {
 
