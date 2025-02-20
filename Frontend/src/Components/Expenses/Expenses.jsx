@@ -4,36 +4,38 @@ import { InnerLayout } from '../../Styles/Layout'
 import { useGlobalContext } from '../../Context/globalContext'
 import Form from '../Form/Form'
 import IncomeItem from '../IncomeItem/IncomeItem'
+import ExpenseForm from './ExpenseForm'
+import { dateFormat } from '../../Utils/Date'
 
 const Expenses = () => {
-  const {addIncome, incomes, getIncome, deleteIncome, totalIncome} = useGlobalContext()
+  const {addIncome, expenses, getExpense, deleteExpense, totalExpense} = useGlobalContext()
 
   useEffect(() => {
-    getIncome()
+    getExpense()
   }, [])
   
   return (
-    <IncomeStyled>
+    <ExpenseStyled>
         <InnerLayout>
             <h1>Expenses</h1>
-            <h2 className="total-income">Total Expenses: <span>${totalIncome()}</span></h2>
+            <h2 className="total-income">Total Expenses: <span>${totalExpense()}</span></h2>
             <div className="income-content">
                 <div className="form-container"></div>
-                    <Form />
+                    <ExpenseForm />
                 <div className="incomes">
-                  {incomes.map((income) => {
-                    const {_id, title, amount, date, category, description} = income;
-                    return <IncomeItem key={_id} id={_id} title={title} description={description} amount={amount} date={date} category={category}
-                    indicatorColor={'#42AD00'} deleteItem={deleteIncome} />
+                  {expenses.map((expense) => {
+                    const {_id, title, amount, date, category, description} = expense;
+                    return <IncomeItem key={_id} id={_id} title={title} description={description} amount={amount} date={dateFormat()} category={category}
+                    indicatorColor={'#42AD00'} deleteItem={deleteExpense} />
                   })}
                 </div>
             </div>
         </InnerLayout>
-    </IncomeStyled>
+    </ExpenseStyled>
   )
 }
 
-const IncomeStyled = styled.div`
+const ExpenseStyled = styled.div`
   display: flex;
   overflow: auto;
   .total-income{
