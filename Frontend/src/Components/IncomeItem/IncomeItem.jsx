@@ -11,8 +11,8 @@ const IncomeItem = ({
     category,
     deleteItem,
     description,
+    type,
     indicatorColor,
-    type
 }) => {
 
     const categoryIcon = () => {
@@ -36,9 +36,9 @@ const IncomeItem = ({
             default:
                 return ''
         }
-
+    }
         const expenseCatIcon = () => {
-            switch (category){
+            switch (category) {
                 case 'education':
                     return book
                 case 'groceries':
@@ -59,7 +59,7 @@ const IncomeItem = ({
                     return ''
             }
         }
-    }
+    
 
     // console.log(id)
   return (

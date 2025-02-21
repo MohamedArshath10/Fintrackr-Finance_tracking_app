@@ -24,8 +24,8 @@ const Expenses = () => {
                     <ExpenseForm />
                 <div className="incomes">
                   {expenses.map((expense) => {
-                    const {_id, title, amount, date, category, description} = expense;
-                    return <IncomeItem key={_id} id={_id} title={title} description={description} amount={amount} date={dateFormat()} category={category}
+                    const {_id, title, amount, date, category, description, type} = expense;
+                    return <IncomeItem key={_id} id={_id} title={title} description={description} amount={amount} date={dateFormat()} type={type} category={category}
                     indicatorColor={'#42AD00'} deleteItem={deleteExpense} />
                   })}
                 </div>
