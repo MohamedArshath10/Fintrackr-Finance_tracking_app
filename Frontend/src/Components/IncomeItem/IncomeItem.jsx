@@ -1,5 +1,5 @@
 import React from 'react'
-import { bitcon, book, calender, card, circle, comment, dollar, food, freelance, medical, money, piggy, stocks, takeaway, trash, tv, users, yt } from '../../Utils/Icons'
+import { bitcon, book, calender, card, circle, comment, dollar, food, freelance, medical, money, piggy, stocks, takeaway, trash, tv, users, yt , clothing} from '../../Utils/Icons'
 import Button from '../Buttons/Button'
 import styled from 'styled-components'
 

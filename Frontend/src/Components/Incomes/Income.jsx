@@ -4,7 +4,7 @@ import { InnerLayout } from '../../Styles/Layout'
 import { useGlobalContext } from '../../Context/globalContext'
 import Form from '../Form/Form'
 import IncomeItem from '../IncomeItem/IncomeItem'
-import { dateFormat } from '../../Utils/Date'
+import { dateFormat } from "/src/Utils/Date.jsx";
 
 const Income = () => {
   const {addIncome, incomes, getIncome, deleteIncome, totalIncome} = useGlobalContext()
