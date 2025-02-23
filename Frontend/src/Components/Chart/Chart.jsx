@@ -15,7 +15,7 @@ import styled from 'styled-components';
 import { dateFormat } from '/src/Utils/Date';
 import { useGlobalContext } from '../../Context/globalContext';
 
-// ✅ Correctly Register ChartJS Components
+//  Correctly Register ChartJS Components
 ChartJs.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
 const Chart = () => {
@@ -26,7 +26,7 @@ const Chart = () => {
         console.log("Fetched Expenses:", expenses);
     }, [incomes, expenses]);
 
-    // ✅ Ensure data is always defined
+    //  Ensure data is always defined
     const data = {
         labels: incomes.length > 0 ? incomes.map((inc) => dateFormat(inc.date)) : ["No Data"],
         datasets: [
