@@ -12,6 +12,7 @@ const Dashboard = () => {
             <div className="stats-con">
               <div className="chart-con">
                 <Chart/>
+                
               </div>
             </div>
         </InnerLayout>
