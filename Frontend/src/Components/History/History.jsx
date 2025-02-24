@@ -6,7 +6,7 @@ const History = () => {
 
     const {transactionHistory} = useGlobalContext()
 
-    const [...history] = transactionHistory
+    const [...history] = transactionHistory()
   return (
     <HistoryStyled>
         <h2>Transaction History</h2>
