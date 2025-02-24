@@ -14,7 +14,7 @@ export const freelance = <i className="fa-solid fa-earth-americas"></i>
 export const yt = <i className="fa-brands fa-youtube"></i>
 export const card = <i className="fa-brands fa-cc-visa"></i>
 export const users = <i className="fa-solid fa-users-between-lines"></i>
-export const dollar = <i className="fa-solid fa-dollar-sign"></i>
+export const dollar = <i class="fa-solid fa-indian-rupee-sign"></i>
 export const calender = <i className="fa-solid fa-calender"></i>
 export const comment = <i className="fa-solid fa-comment"></i>
 export const plus = <i className="fa-solid fa-plus"></i>

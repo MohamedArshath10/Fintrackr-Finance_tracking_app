@@ -33,16 +33,16 @@ const Chart = () => {
             {
                 label: 'Income',
                 data: incomes.length > 0 ? incomes.map((income) => income.amount) : [0],
+                tension: 0.5,
                 backgroundColor: 'green',
                 borderColor: 'green',
-                tension: 0.4
             },
             {
                 label: 'Expenses',
                 data: expenses.length > 0 ? expenses.map((expense) => expense.amount) : [0],
                 backgroundColor: 'red',
                 borderColor: 'red',
-                tension: 0.4
+                tension: 0.5
             },
         ]
     };

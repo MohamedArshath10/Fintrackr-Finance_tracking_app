@@ -5,6 +5,7 @@ import { useGlobalContext } from '../../Context/globalContext'
 import Form from '../Form/Form'
 import IncomeItem from '../IncomeItem/IncomeItem'
 import { dateFormat } from "/src/Utils/Date.jsx";
+import { dollar } from '../../Utils/Icons'
 
 const Income = () => {
   const {addIncome, incomes, getIncome, deleteIncome, totalIncome} = useGlobalContext()
@@ -17,7 +18,7 @@ const Income = () => {
     <IncomeStyled>
         <InnerLayout>
             <h1>Income</h1>
-            <h2 className="total-income">Total Income: <span>${totalIncome()}</span></h2>
+            <h2 className="total-income">Total Income: <span>{dollar}{totalIncome()}</span></h2>
             <div className="income-content">
                 <div className="form-container"></div>
                     <Form />

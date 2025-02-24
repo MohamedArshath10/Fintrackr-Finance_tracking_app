@@ -5,6 +5,7 @@ import { useGlobalContext } from '../../Context/globalContext'
 import IncomeItem from '../IncomeItem/IncomeItem'
 import ExpenseForm from './ExpenseForm'
 import { dateFormat } from '../../Utils/Date'
+import { dollar } from '../../Utils/Icons'
 
 const Expenses = () => {
   const {addIncome, expenses, getExpense, deleteExpense, totalExpense} = useGlobalContext()
@@ -17,7 +18,7 @@ const Expenses = () => {
     <ExpenseStyled>
         <InnerLayout>
             <h1>Expenses</h1>
-            <h2 className="total-income">Total Expenses: <span>${totalExpense()}</span></h2>
+            <h2 className="total-income">Total Expenses: <span>{dollar}{totalExpense()}</span></h2>
             <div className="income-content">
                 <div className="form-container"></div>
                     <ExpenseForm />
