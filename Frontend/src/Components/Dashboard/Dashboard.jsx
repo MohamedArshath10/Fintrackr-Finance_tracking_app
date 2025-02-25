@@ -34,6 +34,7 @@ const Dashboard = () => {
                   </div>
                   <div className="balance">
                     <h2>Total Balance</h2>
+                    <br />
                     <p>{dollar} {totalIncome() - totalExpense()}</p>
                   </div>
                 </div>
@@ -73,57 +74,83 @@ const Dashboard = () => {
   )
 }
 const DashboardStyled = styled.div`
-  .stats-con{
+  .stats-con {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
-    .chart-con{
+    align-items: start;
+
+    /* Responsive for Tablets & Small Screens */
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+
+    .chart-con {
       grid-column: 1 / 4;
-      height: 300px;
-      .amount-con{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+
+      @media (max-width: 1024px) {
+        grid-column: 1 / -1;
+      }
+
+      .amount-con {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
         margin-top: 2rem;
-        .income, .expense{
-          grid-column: span 2;
-        }
-        .income, .expense, .balance{
+        justify-content: center;
+        width: 100%;
+
+        .income, .expense, .balance {
+          flex: 1 1 30%;
+          min-width: 250px;
           background: #fcf6f9;
           border: 2px solid #ffffff;
           box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
           border-radius: 20px;
-          padding: 1rem;
-          p{
-            font-size: 2.5rem;
+          padding: 1.5rem;
+          text-align: center;
+
+          p {
+            font-size: 2rem;
             font-weight: 700;
           }
         }
-
-        .balance{
-          grid-column: 2 / 4;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
       }
     }
-    .history-con{
+
+    .history-con {
       grid-column: 4 / -1;
-      h2{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      @media (max-width: 1024px) {
+        grid-column: 1 / -1;
+      }
+
+      h2 {
         margin: 1rem;
       }
-      .salary-title{
+
+      .salary-title {
         font-size: 1.2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        span{
+        width: 100%;
+        max-width: 400px;
+
+        span {
           font-size: 1.8rem;
         }
       }
-      .salary-item{
+
+      .salary-item {
         background: #fcf6f9;
         border: 2px solid #ffffff;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
@@ -132,13 +159,40 @@ const DashboardStyled = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        p{
+        width: 100%;
+        max-width: 400px;
+
+        p {
           font-weight: 600;
           font-size: 1.2rem;
         }
       }
     }
   }
-`
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .stats-con {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .chart-con {
+      width: 100%;
+    }
+
+    .amount-con {
+      flex-direction: column;
+    }
+
+    .history-con {
+      width: 100%;
+      align-items: center;
+    }
+  }
+`;
+
+
 
 export default Dashboard

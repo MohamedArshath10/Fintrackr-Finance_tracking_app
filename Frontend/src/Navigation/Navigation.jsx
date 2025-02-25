@@ -7,10 +7,10 @@ import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navigation = ({ active, setActive }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 950);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => setIsMobile(window.innerWidth <= 950);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -62,7 +62,7 @@ const MenuToggle = styled.div`
   color: rgba(34, 34, 96, 0.6);
   display: none;
   
-  @media (max-width: 768px) {
+  @media (max-width: 950px) {
     display: block;
   }
 `;
@@ -86,7 +86,7 @@ const NavStyled = styled.nav`
   transition: left 0.3s ease-in-out;
   z-index: 100;
 
-  @media (max-width: 768px) {
+  @media (max-width: 950px) {
     width: 260px;
   }
 
