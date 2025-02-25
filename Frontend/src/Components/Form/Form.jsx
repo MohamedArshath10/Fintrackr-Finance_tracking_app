@@ -8,7 +8,7 @@ import { plus } from '../../Utils/Icons'
 import { GlobalStyle } from '../../Styles/GlobalStyle'
 
 const Form = () => {
-    const {addIncome, getIncome} = useGlobalContext()
+    const {addIncome, getIncome, error} = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',

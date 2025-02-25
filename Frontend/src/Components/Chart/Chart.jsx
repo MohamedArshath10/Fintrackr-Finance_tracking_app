@@ -47,10 +47,6 @@ const Chart = () => {
         ]
     };
 
-    // ✅ Prevent rendering if `incomes` & `expenses` are empty
-    if (!incomes.length && !expenses.length) {
-        return <p>Loading or No Data Available...</p>;
-    }
 
     return (
         <ChartStyled>

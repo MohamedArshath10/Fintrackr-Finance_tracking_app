@@ -14,6 +14,8 @@ const Dashboard = () => {
     getIncome()
     getExpense()
   },[])
+
+
   return (
     <DashboardStyled>
         <InnerLayout>
@@ -39,24 +41,29 @@ const Dashboard = () => {
               <div className="history-con">
                 <History />
                 {/* Income */}
-                <h2 className="salary-title">Min <span>Salary</span>Max</h2>
+                <h2 className="salary-title">Min <span>Salary</span> Max</h2>
                 <div className="salary-item">
                   <p>
-                    {Math.min(...incomes.map((item) => item.amount))}
+                    {dollar}
+                    {incomes.length > 0 ? Math.min(...incomes.map((item) => item.amount)) || 0 : 0}
                   </p>
                   <p>
-                    {Math.max(...incomes.map((item) => item.amount))}
+                    {dollar}
+                    {incomes.length > 0 ? Math.max(...incomes.map((item) => item.amount)) || 0 : 0}
                   </p>
                 </div>
+
 
                 {/* Expense */}
                 <h2 className="salary-title">Min <span>Expense</span>Max</h2>
                 <div className="salary-item">
                   <p>
-                    {Math.min(...expenses.map((item) => item.amount))}
+                    {dollar}
+                    {expenses.length > 0 ? Math.min(...expenses.map((item) => item.amount)) || 0 : 0}
                   </p>
                   <p>
-                    {Math.max(...expenses.map((item) => item.amount))}
+                    {dollar}
+                    {expenses.length > 0 ? Math.max(...expenses.map((item) => item.amount)) || 0 : 0}
                   </p>
                 </div>
               </div>
@@ -106,6 +113,29 @@ const DashboardStyled = styled.div`
       grid-column: 4 / -1;
       h2{
         margin: 1rem;
+      }
+      .salary-title{
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span{
+          font-size: 1.8rem;
+        }
+      }
+      .salary-item{
+        background: #fcf6f9;
+        border: 2px solid #ffffff;
+        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+        padding: 1rem;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+          font-weight: 600;
+          font-size: 1.2rem;
+        }
       }
     }
   }
