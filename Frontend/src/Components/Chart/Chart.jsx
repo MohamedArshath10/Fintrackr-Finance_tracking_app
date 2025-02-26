@@ -22,8 +22,8 @@ const Chart = () => {
     const { incomes, expenses } = useGlobalContext();
 
     useEffect(() => {
-        console.log("Fetched Incomes:", incomes);
-        console.log("Fetched Expenses:", expenses);
+        // console.log("Fetched Incomes:", incomes);
+        // console.log("Fetched Expenses:", expenses);
     }, [incomes, expenses]);
 
     //  Ensure data is always defined

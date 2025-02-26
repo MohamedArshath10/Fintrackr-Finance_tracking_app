@@ -9,12 +9,16 @@ import Income from './Components/Incomes/Income'
 import Expenses from './Components/Expenses/Expenses'
 import Transaction from './Components/Transaction/Transaction'
 import { useGlobalContext } from './Context/globalContext'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Auth from './Components/SignUp or SignIn/Auth'
+import { AuthProvider } from './Context/authContext'
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'
+
 
 const App = () => {
   const [active, setActive] = useState(1)
 
   const global = useGlobalContext()
-  console.log(global);
 
   const displayData = () => {
     switch(active){
@@ -34,15 +38,33 @@ const App = () => {
   const orbMemo = useMemo(() => {
     return <Orb />
   },[])
+
   return (
     <AppStyled bg={bg} className='App'>
-      {orbMemo}
-      <MainLayout>
-        <Navigation active = {active} setActive = {setActive}/>
-        <main>
-          {displayData()}
-        </main>
-      </MainLayout>
+      
+      <AuthProvider>
+        <Router>
+          <Routes>
+            <Route path="/signin" element={<Auth />} />
+            <Route path="/" element={
+              <ProtectedRoute>
+                {orbMemo}
+                <MainLayout>
+                  <Navigation active = {active} setActive = {setActive}/>
+                  <main>
+                    {displayData()}
+                  </main>
+                </MainLayout>
+              </ProtectedRoute>} />
+          </Routes>
+        </Router>
+      </AuthProvider>
+            {/* <MainLayout>
+              <Navigation active = {active} setActive = {setActive}/>
+              <main>
+                {displayData()}
+              </main>
+            </MainLayout> */}
     </AppStyled>
   )
 }

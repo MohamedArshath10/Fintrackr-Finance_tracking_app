@@ -4,16 +4,36 @@ import avatar from '../img/avatar.png';
 import { menuItems } from '../Utils/menuItems';
 import { signout } from '../Utils/Icons';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { useAuth } from '../Context/authContext';
+import { useNavigate } from 'react-router-dom';
 
 const Navigation = ({ active, setActive }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 950);
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  
     const handleResize = () => setIsMobile(window.innerWidth <= 950);
     window.addEventListener('resize', handleResize);
+    
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+  
+
+  const {logout} = useAuth()
+  const navigate = useNavigate()
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    logout(); // Update authentication state
+    navigate('/signin'); // Redirect to dashboard
+  };
 
   return (
     <>
@@ -26,7 +46,7 @@ const Navigation = ({ active, setActive }) => {
         <div className="user-con">
           <img src={avatar} alt="User Avatar" />
           <div className="text">
-            <h2>Arshath</h2>
+            <h2>{username || 'User'}</h2>
             <p>Your Money</p>
           </div>
         </div>
@@ -45,7 +65,7 @@ const Navigation = ({ active, setActive }) => {
           ))}
         </ul>
         <div className="bottom-nav">
-          <li>{signout} Sign Out</li>
+          <li onClick={handleSubmit} style={{ cursor: 'pointer' }}>{signout} Sign Out</li>
         </div>
       </NavStyled>
     </>
