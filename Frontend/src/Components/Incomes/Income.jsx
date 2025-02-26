@@ -8,7 +8,7 @@ import { dateFormat } from "/src/Utils/Date.jsx";
 import { dollar } from '../../Utils/Icons'
 
 const Income = () => {
-  const {addIncome, incomes, getIncome, deleteIncome, totalIncome} = useGlobalContext()
+  const { addIncome, incomes, getIncome, deleteIncome, totalIncome } = useGlobalContext()
 
   useEffect(() => {
     getIncome()
@@ -20,13 +20,26 @@ const Income = () => {
             <h1>Income</h1>
             <h2 className="total-income">Total Income: <span>{dollar}{totalIncome()}</span></h2>
             <div className="income-content">
-                <div className="form-container"></div>
+                <div className="form-container">
                     <Form />
+                </div>
                 <div className="incomes">
                   {incomes.map((income) => {
-                    const {_id, title, amount, date, category, description, type} = income;
-                    return <IncomeItem key={_id} id={_id} title={title} description={description} type={type} amount={amount} date={dateFormat(date)} category={category}
-                    indicatorColor={'#42AD00'} deleteItem={deleteIncome} />
+                    const { _id, title, amount, date, category, description, type } = income;
+                    return (
+                      <IncomeItem 
+                        key={_id} 
+                        id={_id} 
+                        title={title} 
+                        description={description} 
+                        type={type} 
+                        amount={amount} 
+                        date={dateFormat(date)} 
+                        category={category}
+                        indicatorColor={'#42AD00'} 
+                        deleteItem={deleteIncome} 
+                      />
+                    )
                   })}
                 </div>
             </div>
@@ -37,8 +50,11 @@ const Income = () => {
 
 const IncomeStyled = styled.div`
   display: flex;
+  flex-direction: column;
   overflow: auto;
-  .total-income{
+  width: 100%;
+  
+  .total-income {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,20 +64,41 @@ const IncomeStyled = styled.div`
     border-radius: 20px;
     padding: 1rem;
     margin: 1rem 0;
-    font-size: 2rem;
-    gap: .5rem;
-    span{
-      font-size: 2.5rem;
+    font-size: 1.8rem;
+    gap: 0.5rem;
+    text-align: center;
+    
+    span {
+      font-size: 2.2rem;
       font-weight: 800;
       color: #42AD00;
     }
   }
-  .income-content{
+  
+  .income-content {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
-    .incomes{
-      flex: 1;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
     }
   }
+  
+  .form-container {
+    width: 100%;
+    
+    @media (min-width: 768px) {
+      width: 40%;
+    }
+  }
+  
+  .incomes {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 `
-export default Income
+
+export default Income;

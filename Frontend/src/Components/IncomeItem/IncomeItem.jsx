@@ -60,41 +60,38 @@ const IncomeItem = ({
             }
         }
     
-
-    // console.log(id)
-  return (
-    <IncomeItemStyled indicator={indicatorColor}>
-        <div className="icon">
-            {type === 'expense' ? expenseCatIcon() : categoryIcon()}
-        </div>
-        <div className="content">
-            <h5>{title}</h5>
-            <div className="inner-content">
-                <div className="text">
-                    <p>{dollar} {amount}</p>
-                    <p>{calender} {date}</p>
-                    <p> {comment} {description}</p>
-                </div>
-                <div className="btn-con">
-                    <Button
-                        icon={trash}
-                        bPad={'1rem'}
-                        bRad={'50%'}
-                        bg={'#222260'}
-                        color={'#fff'}
-                        iColor = {'#fff'}
-                        hColor= {'#81BFDA'}
-                        onClick={() => {
-                            deleteItem(id)}
-                        }
-                    />
+    return (
+        <IncomeItemStyled indicator={indicatorColor}>
+            <div className="icon">
+                {type === 'expense' ? expenseCatIcon() : categoryIcon()}
+            </div>
+            <div className="content">
+                <h5>{title}</h5>
+                <div className="inner-content">
+                    <div className="text">
+                        <p>{dollar} {amount}</p>
+                        <p>{calender} {date}</p>
+                        <p> {comment} {description}</p>
+                    </div>
+                    <div className="btn-con">
+                        <Button
+                            icon={trash}
+                            bPad={'1rem'}
+                            bRad={'50%'}
+                            bg={'#222260'}
+                            color={'#fff'}
+                            iColor = {'#fff'}
+                            hColor= {'#81BFDA'}
+                            onClick={() => {
+                                deleteItem(id)}
+                            }
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
-    </IncomeItemStyled>
-  )
+        </IncomeItemStyled>
+    )
 }
-
 
 const IncomeItemStyled = styled.div `
     background: #f5f5f5;
@@ -108,6 +105,8 @@ const IncomeItemStyled = styled.div `
     gap: 1rem;
     width: 100%;
     color: #222260;
+    flex-wrap: wrap;
+    
     .icon{
         width: 50px;
         height: 50px;
@@ -117,15 +116,19 @@ const IncomeItemStyled = styled.div `
         align-items: center;
         justify-content: center;
         border: 2px solid #ffffff;
+        flex-shrink: 0;
         i{
             font-size: 1.6rem;
         }
     }
+    
     .content{
         flex: 1;
         display: flex;
         flex-direction: column;
         gap: .2rem;
+        min-width: 200px;
+        
         h5{
             font-size: 1.3rem;
             padding-left: 2rem;
@@ -146,10 +149,15 @@ const IncomeItemStyled = styled.div `
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+            
             .text{
                 display: flex;
                 align-items: center;
-                gap: 1.5rem;
+                flex-wrap: wrap;
+                gap: 1rem;
                 p{
                     display: flex;
                     align-items: center;
@@ -159,7 +167,16 @@ const IncomeItemStyled = styled.div `
                     opacity: 0.8;
                 }
             }
+            .btn-con {
+                margin-left: auto;
+            }
         }
     }
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `
-export default IncomeItem
+
+export default IncomeItem;
