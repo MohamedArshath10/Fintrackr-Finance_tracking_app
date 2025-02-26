@@ -20,8 +20,9 @@ const Expenses = () => {
             <h1>Expenses</h1>
             <h2 className="total-income">Total Expenses: <span>{dollar}{totalExpense()}</span></h2>
             <div className="income-content">
-                <div className="form-container"></div>
+                <div className="form-container">
                     <ExpenseForm />
+                </div>
                 <div className="incomes">
                   {expenses.map((expense) => {
                     const {_id, title, amount, date, category, description, type} = expense;
@@ -37,7 +38,10 @@ const Expenses = () => {
 
 const ExpenseStyled = styled.div`
   display: flex;
+  flex-direction: column;
+  width: 100%;
   overflow: auto;
+  
   .total-income{
     display: flex;
     justify-content: center;
@@ -50,6 +54,7 @@ const ExpenseStyled = styled.div`
     margin: 1rem 0;
     font-size: 2rem;
     gap: .5rem;
+    text-align: center;
     span{
       font-size: 2.5rem;
       font-weight: 800;
@@ -58,10 +63,34 @@ const ExpenseStyled = styled.div`
   }
   .income-content{
     display: flex;
+    flex-direction: column;
     gap: 2rem;
+    
+    .form-container{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
     .incomes{
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .income-content {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .form-container {
+      flex: 1;
+    }
+    .incomes {
+      flex: 2;
     }
   }
 `
-export default Expenses
+export default Expenses;
